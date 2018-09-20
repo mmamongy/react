@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script src="node_modules/react/dist/react.js"></script>
+    <script src="node_modules/react-dom/dist/react-dom.js"></script>
+    <script>
+         const MyTitle = function (props) {
+            return (
+                React.createElement('div', null,  
+                React.createElement('h2' ,null, props.title)
+            )
+            )
+        }
+        //sending a title to the component to be showen in the prop of the smaller components 
+        const MyFirstComponent =  function() {
+            return (  
+            React.createElement('div' , {id: 'my-first-component'},
+             React.createElement('div','null' , [
+                    React.createElement(MyTitle, {title: 'Game of Throns'}) ,
+                    React.createElement(MyTitle, {title: 'Starnger Things'}) ,
+                    React.createElement(MyTitle, 'Rick and Morty') ,
+                    React.createElement(MyTitle, 'Silicon Valley')
+                ])
+            )
+            )
+        }
+       
+        ReactDOM.render(
+            React.createElement(MyFirstComponent),
+            document.getElementById('app')
+        )
+    </script>
+    
+</body>
+</html>
