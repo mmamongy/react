@@ -14,7 +14,7 @@
          const MyTitle = function (props) {
             return (
                 React.createElement('div', null,  
-                React.createElement('h2' ,null, props.title)
+                React.createElement('h2' , {style: {color: props.color } } ,props.title)
             )
             )
         }
@@ -22,14 +22,14 @@
         const MyFirstComponent =  function() {
             return (  
             React.createElement('div' , {id: 'my-first-component'},
-             React.createElement('div','null' , [
-                    React.createElement(MyTitle, {title: 'Game of Throns'}) ,
-                    React.createElement(MyTitle, {title: 'Starnger Things'}) ,
-                    React.createElement(MyTitle, 'Rick and Morty') ,
-                    React.createElement(MyTitle, 'Silicon Valley')
-                ])
+            
+                    React.createElement(MyTitle, {title: 'Game of Throns', color:'YellowGreen'}) ,
+                    React.createElement(MyTitle, {title: 'Starnger Things', color:'GreenYellow'}) ,
+                    React.createElement(MyTitle, {title: 'Rick and Morty',  color : 'LimeGreen'}) ,
+                    React.createElement(MyTitle, {title: 'Silicon Valley' , color : 'peru' })
+                )
             )
-            )
+          
         }
        
         ReactDOM.render(
